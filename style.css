@@ -134,67 +134,76 @@ body {
   display: none;
 }
 
-.letter-section {
-  background: linear-gradient(to right, #ffeaf4, #fff6f0);
+.envelope-section {
   padding: 80px 20px;
-  position: relative;
-  overflow: hidden;
-}
-
-.letter-section h2 {
-  font-family: 'Great Vibes', cursive;
-  font-size: 3rem;
-  color: #ff4081;
-  margin-bottom: 20px;
-  animation: popIn 1s ease;
-}
-
-.letter-card {
-  background: #fff;
-  border: 3px dashed #ff94c2;
-  padding: 30px;
-  border-radius: 20px;
-  max-width: 700px;
-  margin: 0 auto;
-  font-size: 1.15rem;
-  color: #444;
-  line-height: 1.8;
-  font-family: 'Poppins', sans-serif;
-  box-shadow: 0 15px 25px rgba(0,0,0,0.1);
-  animation: zoomIn 0.8s ease;
-  position: relative;
-  transition: transform 0.3s;
-}
-
-.letter-card:hover {
-  transform: scale(1.02);
-}
-
-.floating-emojis {
-  font-size: 1.8rem;
+  background: linear-gradient(to right, #fff0f5, #ffe4ec);
   text-align: center;
-  margin-bottom: 20px;
-  animation: floatEmoji 2s infinite ease-in-out;
 }
 
-@keyframes zoomIn {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+.envelope-container {
+  position: relative;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
-@keyframes floatEmoji {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-  100% { transform: translateY(0); }
+.envelope-img {
+  width: 100%;
+  max-width: 400px;
+  transition: transform 1s ease;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.open-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ff69b4;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  z-index: 2;
+  animation: popIn 0.8s ease;
+}
+
+.letter-message {
+  background: white;
+  padding: 20px;
+  border: 2px dashed #ff8fab;
+  border-radius: 15px;
+  margin-top: 20px;
+  animation: fadeIn 1.5s ease;
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #444;
+  display: none;
+}
+
+.letter-message p {
+  margin-bottom: 15px;
+}
+
+.from {
+  font-style: italic;
+  text-align: right;
+  color: #e91e63;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes popIn {
-  0% { transform: scale(0.5); opacity: 0; }
+  0% { transform: scale(0.8); opacity: 0; }
   100% { transform: scale(1); opacity: 1; }
 }
