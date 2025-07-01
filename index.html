@@ -31,25 +31,26 @@
   <section id="about" class="about-section">
     <h2>About You ✨</h2>
     <p>Aap duniya ki sabse <strong>khubsurat</strong> ladki ho,<br>
-       bohot <strong>down to earth ho</strong>, <strong>kind Hearted ho</strong> and haan... <strong>bohot cute</strong> ho aur sabse zaruri baat aap meri ho😊</p>
+       bohot <strong>down to earth ho</strong>, <strong>kind Hearted ho</strong> and haan... <strong>bohot cute</strong> ho aur sabse zaruri baat aap meri ho 😊</p>
     <p class="from">— Tumhara Chutka 💌</p>
   </section>
 
-<section class="envelope-section">
-  <div class="envelope-container" id="envelope">
-    <img src="https://i.imgur.com/I9d1zyv.png" alt="Envelope" class="envelope-img" />
-    <button class="open-btn" onclick="openEnvelope()">💌 Open With Love 💖</button>
-    <div class="letter-message hidden" id="letterMsg">
-      <p>Shuna,</p>
-      <p>Jab mene apko pehle dekha us din hi mene samaj liya tha ki meri zindagi khatam hogi apka haath pakde hue...</p>
-      <p>Duniya me jab aap aaye ho, toh mera sath dene ke liye hi aaye ho...</p>
-      <p>I love you in every universe, Suna... 💖</p>
-      <p class="from">— Tumhara Chutka 💌</p>
+  <!-- Envelope Section -->
+  <section class="envelope-section">
+    <div class="envelope-container" id="envelope">
+      <img src="https://i.imgur.com/I9d1zyv.png" alt="Envelope" class="envelope-img" />
+      <button class="open-btn" onclick="openEnvelope()">💌 Open With Love 💖</button>
+      <div class="letter-message hidden" id="letterMsg">
+        <p>Shuna,</p>
+        <p>Jab mene apko pehle dekha us din hi mene samaj liya tha ki meri zindagi khatam hogi apka haath pakde hue...</p>
+        <p>Duniya me jab aap aaye ho, toh mera sath dene ke liye hi aaye ho...</p>
+        <p>I love you in every universe, Suna... 💖</p>
+        <p class="from">— Tumhara Chutka 💌</p>
+      </div>
     </div>
-  </div>
-</section>
-  
-  <!-- Floating Hearts Script + Music -->
+  </section>
+
+  <!-- Floating Hearts + Music Script -->
   <script>
     const container = document.querySelector('.heart-container');
     const bgMusic = new Audio('assets/music.mp3');
@@ -83,6 +84,20 @@
       container.appendChild(heart);
       setTimeout(() => heart.remove(), 5000);
     }, 500);
+  </script>
+
+  <!-- Envelope Open Script -->
+  <script>
+    function openEnvelope() {
+      const envelope = document.getElementById('envelope');
+      const msg = document.getElementById('letterMsg');
+      const btn = envelope.querySelector('.open-btn');
+      envelope.querySelector('.envelope-img').style.transform = 'rotateX(180deg)';
+      btn.style.display = 'none';
+      setTimeout(() => {
+        msg.style.display = 'block';
+      }, 800);
+    }
   </script>
 </body>
 </html>
