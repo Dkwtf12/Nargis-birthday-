@@ -35,17 +35,12 @@
     <p class="from">— Tumhara Chutka 💌</p>
   </section>
 
-  <!-- Optional Background Music -->
-  <!--
-  <audio autoplay loop>
-    <source src="assets/music.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
-  -->
-
-  <!-- Floating Hearts Script -->
+  <!-- Floating Hearts Script + Music -->
   <script>
     const container = document.querySelector('.heart-container');
+    const bgMusic = new Audio('assets/music.mp3');
+    bgMusic.loop = true;
+
     setInterval(() => {
       const heart = document.createElement('div');
       heart.className = 'heart';
@@ -57,6 +52,14 @@
         const popup = document.getElementById('popup');
         popup.classList.remove('hidden');
         popup.classList.add('show');
+
+        // 🎵 Play music on first heart click
+        if (bgMusic.paused) {
+          bgMusic.play().catch((err) => {
+            console.log("Autoplay blocked:", err);
+          });
+        }
+
         setTimeout(() => {
           popup.classList.remove('show');
           popup.classList.add('hidden');
